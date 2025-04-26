@@ -28,6 +28,7 @@ export class Details {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
+      console.log("Fetched Game Details Data:", data); // Add this log
       this.ui.displayDetails(data);
     } catch (error) {
       console.error("Failed to fetch game details:", error);
@@ -36,6 +37,7 @@ export class Details {
     }
   }
 }
+
 
 
 
