@@ -53,12 +53,15 @@ export class Games {
   }
 
   showDetails(idGame) {
-    console.log("Showing details for Game ID:", idGame); // Add this log
-    new Details(idGame);
+    // Hide games page and show details page
     document.querySelector(".games").classList.add("d-none");
     document.querySelector(".details").classList.remove("d-none");
+
+    console.log("Showing details for Game ID:", idGame); // Add this log
+    new Details(idGame);
   }
 }
+
 
 
 
