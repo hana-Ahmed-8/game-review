@@ -1,3 +1,4 @@
+import { Details } from "./details.module.js";
 import { Ui } from "./ui.module.js";
 
 export class Games {
@@ -31,6 +32,7 @@ export class Games {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
+      console.log("Fetched Games Data:", data); // Add this log
       this.ui.displayDataGame(data);
       this.startEvent();
     } catch (error) {
@@ -44,16 +46,19 @@ export class Games {
     document.querySelectorAll(".card").forEach((item) => {
       item.addEventListener("click", () => {
         const id = item.dataset.id;
+        console.log("Clicked Game ID:", id); // Add this log
         this.showDetails(id);
       });
     });
   }
 
   showDetails(idGame) {
+    console.log("Showing details for Game ID:", idGame); // Add this log
     new Details(idGame);
     document.querySelector(".games").classList.add("d-none");
     document.querySelector(".details").classList.remove("d-none");
   }
 }
+
 
 
