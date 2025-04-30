@@ -32,7 +32,7 @@ export class Games {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
-      console.log("Fetched Games Data:", data); // Add this log
+      console.log("Fetched Games Data:", data); 
       this.ui.displayDataGame(data);
       this.startEvent();
     } catch (error) {
@@ -46,7 +46,7 @@ export class Games {
     document.querySelectorAll(".card").forEach((item) => {
       item.addEventListener("click", () => {
         const id = item.dataset.id;
-        console.log("Clicked Game ID:", id); // Add this log
+        console.log("Clicked Game ID:", id); 
         this.showDetails(id);
       });
     });
@@ -57,7 +57,7 @@ export class Games {
     document.querySelector(".games").classList.add("d-none");
     document.querySelector(".details").classList.remove("d-none");
 
-    console.log("Showing details for Game ID:", idGame); // Add this log
+    console.log("Showing details for Game ID:", idGame); 
     new Details(idGame);
   }
 }
